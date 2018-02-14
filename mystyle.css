@@ -3,18 +3,22 @@
 margin:0;
 padding:0;
 }
+body{
+  background-image:  url("https://images.unsplash.com/photo-1480241352829-e1573ff2414e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3e47d11e9273db2993817d24db2475d7&auto=format&fit=crop&w=1500&q=80");
+  background-position: center;
+}
 /* responsive webpage for moblie */
 .grid{
   display: grid;
   /* 1 fr/100 px/20% /auto */
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "title title"
-  "header header"
-  "sidebar sidebar"
-  "content content"
-  "footer footer";
-  grid-gap: 20px;
+  grid-template-areas: "title title title"
+  "header header header"
+  "sidebar sidebar sidebar"
+  "content content content"
+  "footer footer footer";
+  grid-gap: 15px;
 }
   /* .title {
     /* grid-column-start: 1;
@@ -24,12 +28,29 @@ padding:0;
     grid-row-end: span 2; }*/
 .title {
   grid-area: title;
+  font-family: 'Bangers';font-size: 22px;
+  text-transform: uppercase;
+  justify-self: center;
+  align-self: center;
+  text-shadow: 2px 1px white;
+    /* font-style: italic; */
 }
 .header {
   grid-area: header;
+  font-family: 'Barrio';font-size: 22px;
+  text-shadow: 2px 1px white;
+  text-transform: capitalize;
+  letter-spacing: 3px;
+  word-spacing: 10px;
+  justify-self: center;
+  align-self: center;
+  line-height: 2;
+
 }
 .sidebar {
   grid-area: sidebar;
+  display: grid;
+
 }
 .content {
   grid-area: content;
@@ -42,13 +63,20 @@ padding:0;
 }
 .footer {
   grid-area: footer;
+  font-family: 'Barrio';font-size: 22px;
+  text-transform: capitalize;
+  letter-spacing: 3px;
+  word-spacing: 10px;
+  justify-self: center;
+  align-self: center;
+  line-height: 2;
 }
 
 .grid div:nth-child(even){
-  background-color:blue;
+  background-color:orange;
 }
 .grid div:nth-child(odd){
-  background-color: green;
+  background-color: purple;
 }
 
 /* responsive webpage for desktop */
@@ -56,11 +84,11 @@ padding:0;
 {
   .grid{
     display: grid;
-    grid-template-columns: 1fr  500px 500px 1fr;
+    grid-template-columns: 1fr  200px 500px 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas: ". title title ."
-    ". header header ."
-    ". sidebar content ."
-    ". footer footer .";
+    grid-template-areas: ". title title title ."
+    ". header header header ."
+    ". sidebar content content ."
+    ". footer footer footer .";
   }
 }
