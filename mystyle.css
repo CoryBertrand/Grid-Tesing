@@ -1,7 +1,14 @@
-
+/* <!DOCTYPE css> */
 *{
 margin:0;
 padding:0;
+border-radius: 25px;
+}
+.grid div:nth-child(even){
+  background-color:orange;
+}
+.grid div:nth-child(odd){
+  background-color: purple;
 }
 body{
   background-image:  url("https://images.unsplash.com/photo-1480241352829-e1573ff2414e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3e47d11e9273db2993817d24db2475d7&auto=format&fit=crop&w=1500&q=80");
@@ -18,7 +25,7 @@ body{
   "sidebar sidebar sidebar"
   "content content content"
   "footer footer footer";
-  grid-gap: 15px;
+  grid-gap: 20px;
 }
   /* .title {
     /* grid-column-start: 1;
@@ -33,6 +40,7 @@ body{
   justify-self: center;
   align-self: center;
   text-shadow: 2px 1px white;
+  padding: 20px;
     /* font-style: italic; */
 }
 .header {
@@ -45,14 +53,19 @@ body{
   justify-self: center;
   align-self: center;
   line-height: 2;
+  padding: 5px 15px 5px 15px;
 
 }
 .sidebar {
   grid-area: sidebar;
-  display: grid;
-
+  /* display: grid; */
+  padding: 10px;
+ justify-self: center;
+ align-self: center;
 }
 .content {
+  display: grid;
+  padding: 20px;
   grid-area: content;
   /* justify-self: center;
    aline from top to bottom
@@ -63,20 +76,14 @@ body{
 }
 .footer {
   grid-area: footer;
-  font-family: 'Barrio';font-size: 22px;
+  font-family: 'Barrio';font-size: 28px;
   text-transform: capitalize;
   letter-spacing: 3px;
   word-spacing: 10px;
   justify-self: center;
   align-self: center;
   line-height: 2;
-}
-
-.grid div:nth-child(even){
-  background-color:orange;
-}
-.grid div:nth-child(odd){
-  background-color: purple;
+  padding: 10px;
 }
 
 /* responsive webpage for desktop */
@@ -84,11 +91,27 @@ body{
 {
   .grid{
     display: grid;
-    grid-template-columns: 1fr  200px 500px 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr  1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 100px 1fr 200px;
     grid-template-areas: ". title title title ."
     ". header header header ."
-    ". sidebar content content ."
+    ". sidebar sidebar content ."
     ". footer footer footer .";
   }
 }
+
+/* responsive webpage for tablet */
+/* @media screen and (min-width: 1136px)
+{
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". title title title ."
+  ". header header header ."
+  ". sidebar sidebar sidebar ."
+  ". content content content ."
+  ". footer footer footer .";
+  grid-gap: 20px;
+}
+} */
