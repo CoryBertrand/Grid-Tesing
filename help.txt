@@ -1,6 +1,5 @@
 <!--
 Instructions for repo stage add/commit/push
-Also first repo push to GitHub
 cd folder path
 git init
 git status
